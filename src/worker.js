@@ -254,7 +254,7 @@ export default {
                         return new Response('Success', {
                             status: 200,
                             headers: {
-                                'Set-Cookie': 'jwtToken=; Secure; SameSite=None; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
+                                'Set-Cookie': 'jwtToken=; Secure; SameSite=None; Expires=1970年1月01日，周四 00:00:00 GMT',
                                 'Content-Type': 'text/plain'
                             }
                         });        
@@ -269,13 +269,13 @@ export default {
                         return new Response('Success', {
                             status: 200,
                             headers: {
-                                'Set-Cookie': 'jwtToken=; Path=/; Secure; SameSite=None; Expires=Thu, 01 Jan 1970 00:00:00 GMT',
+                                'Set-Cookie': 'jwtToken=; Path=/; Secure; SameSite=None; Expires=1970年1月01日，周四 00:00:00 GMT',
                                 'Content-Type': 'text/plain',
                             }
                         });
 
                     default:
-                        // return new Response('Not found', { status: 404 });
+                        return new Response('Not found', { status: 404 });
                         url.hostname = 'www.speedtest.net';
                         url.protocol = 'https:';
                         request = new Request(url, request);
@@ -294,7 +294,7 @@ export default {
 };
 
 /**
- * Handles VLESS over WebSocket requests by creating a WebSocket pair, accepting the WebSocket connection, and processing the VLESS header.
+ * Handles VLESS over WebSocket requests by creating a WebSocket pair, accepting the WebSocket connection, 和 processing the VLESS header.
  * @param {import("@cloudflare/workers-types").Request} request The incoming request object.
  * @returns {Promise<Response>} A Promise that resolves to a WebSocket response object.
  */
